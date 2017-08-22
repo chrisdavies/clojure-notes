@@ -207,6 +207,8 @@ values are implicit. The value produced by the last expression is what is return
 
 ```
 
+You've probably also heard of [macros](https://www.braveclojure.com/writing-macros/). You can think of them as little code-generators built into Clojure. They can be used to greatly reduce boilerplate in certain situations (see the `->` macro, for a good example of this). From a consumption point of view, they are almost indistinguishable from functions. They are, however, more complex to write, so steer clear of them until you have a better handle on the language.
+
 
 ## Handy collection functions and behaviors
 
