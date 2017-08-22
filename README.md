@@ -555,7 +555,8 @@ More:
 ```
 
 - If you're about to write a data-manipulation function, have a quick scan of the core namespace to see if one already exists
-
+- You probably won't need to create ES6-like clasess in ClojureScript, but if inter-operating with some JS libs, you might
+  - It's not great. [See here for details](./cljs-and-es6-classes.md)
 
 ## Resources
 
