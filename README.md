@@ -556,6 +556,16 @@ More:
 
 ```
 
+- Clojure has a concept called atoms which are thread-safe references to a value
+  - The value they are pointing to can be changed via the `swap!` function
+  - This mechanism is also used in ClojureScript's reagent and re-frame React-wrappers
+
+```clj
+(def x (atom 1))
+(swap! x inc)
+@x ; => 2
+```
+
 - If you're about to write a data-manipulation function, have a quick scan of the core namespace to see if one already exists
 - You probably won't need to create ES6-like clasess in ClojureScript, but if inter-operating with some JS libs, you might
   - It's not great. [See here for details](./cljs-and-es6-classes.md)
