@@ -179,12 +179,12 @@ values are implicit. The value produced by the last expression is what is return
 ; function baz([a, b, ...c]) {
 ;   return a + b + c.reduce((a, b) => a + b);
 ; }
-(defn baz [a b & c]
+(defn baz [[a b & c]]
   (+ a b (reduce + c)))
 
-(baz 1 2 3 4) ; => 10
-(baz 1 2)     ; => 3
-(baz 1)       ; => error!!! All non-rest arguments are required
+(baz [1 2 3 4]) ; => 10
+(baz [1 2])     ; => 3
+(baz [1])       ; => error!!! All non-rest arguments are required
 
 ; You can combine destructuring techniques, but it gets messy pretty fast, so don't
 
