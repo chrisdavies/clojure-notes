@@ -1,5 +1,16 @@
 # CLJ for JavaScripters
 
+Homoiconicity-- the language is a datastructure of the language. 
+
+```js
+// Not homoiconic
+console.log("hello", " world!");
+
+// Homoiconic
+[console.log, "hello", " world!"];
+
+```
+
 The core idea of Clojure is to compose programs by using a small set of data types and a broad range of general functions which can be applied to those data types. This is called data-oriented programming. The idea is that most (all?) programs are simply a function of data transformations over time.
 
 If you can wrap your head around the basic types and some general rules of thumb for exploration, you can pick the language up very quickly.
