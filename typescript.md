@@ -43,6 +43,7 @@ One should depend on abstractions, not concretions. This is the key one, in my o
 
 `name: type`
 
+
 ```typescript
 const x: number = 32;
 const y = 32; // Works due to type-inference
@@ -134,16 +135,16 @@ x = [3, "Hello"]; // fails
 Super handy for saying, this thing can have these values and only these values.
 
 ```typescript
-enum Role { Admin, Guide, Student };
+enum AppRole { Admin, Guide, Student };
 
 interface User {
   name: string;
-  role: Role;
+  role: AppRole;
 }
 
 const user = {
   name: 'Joe',
-  role: Role.Admin
+  role: AppRole.Admin
 }
 
 ```
@@ -215,19 +216,21 @@ These must then be handled with typeof or instanceof checks in order to safely c
 Intersections are kind of the opposite of unions. Instead of saying, "this can be either an x or a y", an intersection says "this must be both an x and a y".
 
 ```typescript
+
 // A user is both a person and a role
-type User = Person & Role
-````
+type User = Person & Role;
+
+```
 
 
 ## Casting
 
 You can cast from one type to another using the `as` keyword. This is dangerous, as it is not checked by the compiler and leads to runtime errors in my experience. But sometimes, you gotsta do what you gotsta do.
 
-`const y = x as number;`
-
-
-## 
+```typescript
+// x: any ...
+const y = x as number;
+```
 
 
 ## Generics
@@ -236,7 +239,6 @@ TypeScript supports generic typing. This basically means, you can create a type 
 
 
 ```typescript
-
 
 interface Addable<T> {
   value: T;
@@ -271,20 +273,10 @@ console.log(shtuff(sayHello, 'world!')); // 'Hello, world!'
 
 ```
 
-## Misc
-
-You can specify that this type has these properties, and then a bunch of other properties that are dynamic:
-
-https://basarat.gitbooks.io/typescript/content/docs/types/freshness.html
-
-
-
 
 ## Parting Thoughts
 
-
 TypeScript supports immutability, but it is verbose and clunky, so it's unlikely to be used heavily. And there is no performant, idiomatic way to deal with immutable datatypes.
-
 
 TypeScript's type system makes for good editor tooling and better refactoring. Many type errors are discovered at transpile time, rather than runtime.
 
@@ -299,9 +291,5 @@ It can take a little more work than dynamic systems, but the idea is that mainta
 - https://basarat.gitbooks.io/typescript
 - https://www.typescriptlang.org/docs/handbook/advanced-types.html
 - https://learnxinyminutes.com/docs/typescript/
-
-
-
-
-
+- https://basarat.gitbooks.io/typescript/content/docs/types/freshness.html
 
